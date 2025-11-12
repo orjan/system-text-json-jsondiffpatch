@@ -1,32 +1,28 @@
 name: build-and-test
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 env:
   JsonDiffPatchSolutionPath: src/SystemTextJson.JsonDiffPatch.sln
 jobs:
   build:
     strategy:
       matrix:
-        build-configuration: [ Debug, Release ]
-        test-target-framework: [ net8.0, net7.0, net6.0 ]
+        build-configuration: [Debug, Release]
+        test-target-framework: [net10.0, net8.0]
     name: Build And Test (${{ matrix.test-target-framework }}, ${{ matrix.build-configuration }})
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Setup DotNet
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: |
-            8.x
-            7.x
-            6.x
+          global-json-file: global.json
       - name: Restore
         run: dotnet restore ${{ env.JsonDiffPatchSolutionPath }}
       - name: Build
         run: dotnet build -c ${{ matrix.build-configuration }} --no-restore ${{ env.JsonDiffPatchSolutionPath }}
       - name: Test
         run: dotnet test -c ${{ matrix.build-configuration }} -f ${{ matrix.test-target-framework }} --no-restore --no-build ${{ env.JsonDiffPatchSolutionPath }}
-
