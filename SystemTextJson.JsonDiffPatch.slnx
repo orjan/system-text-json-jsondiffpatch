@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/test/">
+    <Project Path="test/SystemTextJson.JsonDiffPatch.Benchmark/SystemTextJson.JsonDiffPatch.Benchmark.csproj" />
+    <Project Path="test/SystemTextJson.JsonDiffPatch.MSTest.Tests/SystemTextJson.JsonDiffPatch.MSTest.Tests.csproj" />
+    <Project Path="test/SystemTextJson.JsonDiffPatch.NUnit.Tests/SystemTextJson.JsonDiffPatch.NUnit.Tests.csproj" />
+    <Project Path="test/SystemTextJson.JsonDiffPatch.UnitTests/SystemTextJson.JsonDiffPatch.UnitTests.csproj" />
+    <Project Path="test/SystemTextJson.JsonDiffPatch.Xunit.Tests/SystemTextJson.JsonDiffPatch.Xunit.Tests.csproj" />
+  </Folder>
+  <Project Path="src/SystemTextJson.JsonDiffPatch.MSTest/SystemTextJson.JsonDiffPatch.MSTest.csproj" />
+  <Project Path="src/SystemTextJson.JsonDiffPatch.NUnit/SystemTextJson.JsonDiffPatch.NUnit.csproj" />
+  <Project Path="src/SystemTextJson.JsonDiffPatch.Xunit/SystemTextJson.JsonDiffPatch.Xunit.csproj" />
+  <Project Path="src/SystemTextJson.JsonDiffPatch/SystemTextJson.JsonDiffPatch.csproj" />
+</Solution>
