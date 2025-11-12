@@ -15,7 +15,7 @@ jobs:
     name: Build And Test (${{ matrix.test-target-framework }}, ${{ matrix.build-configuration }})
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Setup DotNet
         uses: actions/setup-dotnet@v2
         with:
